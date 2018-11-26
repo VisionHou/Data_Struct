@@ -1,78 +1,30 @@
-#include"SList.h"
-#include<Windows.h>
-#include<stdio.h>
+#include"queue.h"
+#include<windows.h>
 
-#if 0
-void TestSList()
+void TestQueue()
 {
-	SeqList s;
-	SeqListInit(&s);
-	SeqListPushBack(&s, 1);
-	SeqListPushBack(&s, 2);
-	SeqListPushBack(&s, 3);
-	SeqListPushBack(&s, 4);
-	SeqListPushBack(&s, 4);
-	SeqListPushBack(&s, 5);
-	SeqLisPrint(&s);
+	Queue q;
+	QueueInit(&q);
+	QueuePush(&q, 1);
+	QueuePush(&q, 2);
+	QueuePush(&q, 3);
+	QueuePush(&q, 4);
+	QueuePush(&q, 5);
+	QueuePrint(&q);
 
-	SeqListPopBack(&s);
-	SeqListPopBack(&s);
-	SeqLisPrint(&s);
+	QueuePop(&q);
+	QueuePrint(&q);
 
-	SeqListPushFront(&s, 5);
-	SeqListPushFront(&s, 6);
-	SeqLisPrint(&s);
-
-	SeqListPopFront(&s);
-	SeqListPopFront(&s);
-	SeqLisPrint(&s);
-
-	SeqListInsert(&s, 3, 7);
-	SeqLisPrint(&s);
-
-	SeqListErase(&s, 2);
-	SeqLisPrint(&s);
-
-	SeqListFind(&s, 2)
-		;
-	SeqListRemove(&s,3);
-	SeqLisPrint(&s);
-
-	SeqListRemoveAll(&s, 4);
-	SeqLisPrint(&s);
-
-	int sz = 0;
-	printf("有效元素个数是%d\n", SeqListSize(&s));
-}
-#endif
-
-void TestSListD()
-{
-	SeqListD s;
-	SeqListDInit(&s);
-	SeqListDPushBack(&s, 1);
-	SeqListDPushBack(&s, 2);
-	SeqListDPushBack(&s, 3);
-	SeqLisDPrint(&s);
-
-	SeqListDPopBack(&s);
-	SeqLisDPrint(&s);
-
-	printf("size=%d\n", SeqListDSize(&s));
-	printf("capacity=%d\n", SeqListDCapacity(&s));
-
-	SeqListDClear(&s);
-	printf("size=%d\n", SeqListDSize(&s));
-	printf("capacity=%d\n", SeqListDCapacity(&s));
-
-
-
+	printf("Front= %d\n",QueueFront(&q));
+	printf("Back= %d\n", QueueBack(&q));
+	printf("size= %d\n", QueueSize(&q));
+	printf("ret= %d\n", QueueEmpty(&q));
 
 }
+
 int main()
 {
-	//TestSList();
-	TestSListD();
+	TestQueue();
 	system("pause");
 	return 0;
 }
