@@ -13,56 +13,57 @@ void TestBinTree()
 	CreateBinTree(&pRoot, str, strlen(str), '#');
 	//pNewRoot = CopyBinTree(pRoot);
 
-	printf("Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ");
+	printf("Ç°Ðò±éÀú£º ");
 	PreOrder(pRoot);
 	printf("\n");
 
-	printf("Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ");
+	printf("Ç°Ðò±éÀú£º ");
 	PreOrderNor(pRoot);
 	printf("\n");
 
-	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ");
+
+	printf("ÖÐÐò±éÀú£º ");
 	InOrder(pRoot);
 	printf("\n");
 
 
-	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ");
+	printf("ÖÐÐò±éÀú£º ");
 	InOrderNor(pRoot);
 	printf("\n");
 
-	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ");
+	printf("ºóÐò±éÀú£º ");
 	PostOrder(pRoot);
 	printf("\n");
 
-	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ");
+	printf("ºóÐò±éÀú£º ");
 	PostOrderNor(pRoot);
 	printf("\n");
 
-	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ");
+	printf("²ãÐò±éÀú£º ");
 	LevelOrder(pRoot);
 	printf("\n");
 
 	MirrorBinTreeNode(pRoot);
 	MirrorBinTreeNode(pRoot);
-	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ");
+	printf("²ãÐò±éÀú£º ");
 	LevelOrder(pRoot);
 	printf("\n");
 
-	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð½Úµï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½: %d\n", BinTreeSize(pRoot));
-	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¶ï¿½Ó½Úµï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½: %d\n", BinTreeLeaf(pRoot));
-	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½4ï¿½ï¿½Úµï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½: %d\n", BinTreeKLevelNode(pRoot,4));
-	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ß¶ï¿½ï¿½ï¿½: %d\n", BinTreeHight(pRoot));
+	printf("¶þ²æÊ÷ÖÐ½ÚµãµÄ¸öÊýÊÇ: %d\n", BinTreeSize(pRoot));
+	printf("¶þ²æÊ÷ÖÐÒ¶×Ó½ÚµãµÄ¸öÊýÊÇ: %d\n", BinTreeLeaf(pRoot));
+	printf("¶þ²æÊ÷ÖÐµÚ4²ã½ÚµãµÄ¸öÊýÊÇ: %d\n", BinTreeKLevelNode(pRoot,4));
+	printf("¶þ²æÊ÷µÄ¸ß¶ÈÊÇ: %d\n", BinTreeHight(pRoot));
 
 	pNode = BinTreeFind(pRoot, 'E');
 	if (IsNodeInBinTree(pRoot,pNode))
-		printf("%cï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n", pNode->_data);
+		printf("%cÔÚ¶þ²æÊ÷ÖÐ\n", pNode->_data);
 	else
-		printf("%cï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n", pNode->_data);
+		printf("%c²»ÔÚ¶þ²æÊ÷ÖÐ\n", pNode->_data);
 
 	if (IsCompleteBinTree(pRoot))
-		printf("ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
+		printf("ÊÇÍêÈ«¶þ²æÊ÷\n");
 	else
-		printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
+		printf("²»ÊÇÍêÈ«¶þ²æÊ÷\n");
 
 }
 int main()
