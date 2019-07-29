@@ -218,3 +218,50 @@ void QuickSort(int* array, int left,int right)
 		QuickSort(array, div + 1, right);
 	
 }
+void MergeData(int* array, int left, int mid, int right, int* temp)
+{
+	int beginL = left, endL = mid;
+	int beginR = mid, endR = right;
+	int index = left;
+
+	while (beginL < endL && beginR < endR)
+	{
+		if (array[beginL] <= array[beginR])
+			temp[index++] = array[beginL++];
+		else
+			temp[index++] = array[beginR++];
+	}
+
+	while (beginL < endL)
+	{
+		temp[index++] = array[beginL++];
+	}
+
+	while (beginR < endR)
+	{
+		temp[index++] = array[beginR++];
+	}
+}
+void _MergeSort(int* array, int left, int right, int* temp)
+{
+	if (right - left > 1)
+	{
+		int mid = left + ((right - left) >> 1);
+		_MergeSort(array, left, mid, temp);
+		_MergeSort(array, mid, right, temp);
+		MergeData(array, left, mid, right, temp);
+		memcpy(array + left, temp + left, sizeof(array[0]) * (right - left));
+	}
+}
+void MergeSort(int* array, int size)
+{
+	int* temp = (int*)malloc(size * sizeof(array[0]));
+	if (NULL == temp)
+	{
+		assert(0);
+		return;
+	}
+
+	_MergeSort(array, 0, size, temp);
+	free(temp);
+}
